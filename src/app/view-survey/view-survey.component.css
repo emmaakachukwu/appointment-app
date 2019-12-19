@@ -1,0 +1,12 @@
+.card {
+    width: auto;
+    padding: 10px;
+}
+
+thead th {
+    font-size: 12px !important;
+}
+
+td {
+    font-size: 14px !important;
+}

@@ -1,0 +1,107 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidebar {
+  background: #fff;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+mat-nav-list a {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-family: 'Nanum Gothic';
+  color: #908c8c;
+  padding-left: 30px;
+}
+
+i {
+  color: #255475;
+  font-size: 15px;
+  margin-right: 15px;
+}
+
+mat-nav-list a mat-icon {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+mat-sidenav #learn {
+  font-family: 'Concert One';
+  letter-spacing: 1px;
+  margin: 20px auto 50px;
+  text-align: center;
+  color: #255475;
+}
+
+#userlogo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  display: block;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+#content {
+  padding: 87px 20px 20px;
+  height: 100vh auto;
+  min-height: 100%;
+}
+
+#toolbar {
+  position: fixed;
+  background: #fff;
+  top: 0;
+  z-index: 1;
+  height: 70px;
+  border-bottom: 3px solid #f1f1f1;
+}
+
+#pay {
+  color: #7796A6;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#roll {
+  font-size: 25px;
+  color: #2196F3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav-head {
+  margin: 15px 0 0 20px;
+  color: #255475;
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#user {
+  margin-left: 5px;
+}
+
+#progressBar {
+  position: fixed;
+  z-index: 9;
+  width: 100%;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.navbar {
+  z-index: 1;
+}

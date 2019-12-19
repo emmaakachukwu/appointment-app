@@ -1,0 +1,53 @@
+<div>
+    <div class="table-responsive card" *ngIf='surveys'>   
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Instagram Handle</th>
+                    <th>Address</th>
+                    <th>Age Range</th>
+                    <th>Favourite Colour</th>
+                    <th>Favourite designer</th>
+                    <th>Favourite Fashion Icon</th>
+                    <th>Favourite Trend</th>
+                    <th>Favourite Style</th>
+                    <th>Can never wear</th>
+                    <th>Should be in every woman's wardrobe</th>
+                    <th>Fitted or Free Clothes</th>
+                    <th>Best Garment length</th>
+                    <th>Notify me</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor='let s of surveys; let i = index'>
+                    <td>{{i+1}}</td>
+                    <td>{{s.fullname | titlecase}}</td>
+                    <td>{{s.email}}</td>
+                    <td>{{s.phone}}</td>
+                    <td>{{s.instagram}}</td>
+                    <td>{{s.address}}</td>
+                    <td>{{s.age_range}}</td>
+                    <td>{{s.fav_color}}</td>
+                    <td>{{s.fav_designer}}</td>
+                    <td>{{s.fash_icon}}</td>
+                    <td>{{s.fav_trend}}</td>
+                    <td>{{s.fav_style}}</td>
+                    <td>{{s.neverwear}}</td>
+                    <td>{{s.wardrobe_woman}}</td>
+                    <td>{{s.fitted_or_free}}</td>
+                    <td>{{s.garment_length}}</td>
+                    <td>{{s.notify_me}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="text-align: center; padding: 20px" *ngIf='!surveys'>
+        <h4>No survey found</h4>
+    </div>
+</div>

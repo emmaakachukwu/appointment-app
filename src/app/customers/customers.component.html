@@ -1,0 +1,48 @@
+<div>
+    <div class="card filter">
+        <mat-form-field>
+            <mat-label>Filter Users</mat-label>
+            <mat-select [(ngModel)]='selected' name='filter' (ngModelChange)="filter($event)">
+                <mat-option value='0'>All</mat-option>
+                <mat-option value='1'>Paying Users</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="table-responsive card" *ngIf='customers'>   
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor='let c of customers; let i = index'>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{c.surname | titlecase}} {{c.name | titlecase}} {{c.othernames | titlecase}}</td>
+                    <td>{{c.email}}</td>
+                    <td>{{c.phone_no}}</td>
+                    <td>
+                        <span id="{{i}}">
+                            <mat-icon title="View Appointment History" style="cursor: pointer" (click)="view(c.email, c.surname+' '+c.name+' '+c.othernames, i)">open_in_new</mat-icon>
+                        </span>
+
+                        <span *ngIf='viewMessage == i' id="{{i}}">
+                            Opening ...
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="text-align: center; padding: 20px" *ngIf='!customers'>
+        <h4>No users found</h4>
+    </div>
+
+</div>

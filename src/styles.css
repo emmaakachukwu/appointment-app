@@ -1,0 +1,63 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~open-iconic/font/css/open-iconic-bootstrap.css';
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~datatables.net-bs4/css/dataTables.bootstrap4.css";
+.card {
+    width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.btn {
+    width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: #f1f1f1;
+    margin: 0;
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px #fff inset;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.hr {
+    color: #000;
+}
+
+.headers {
+    margin-left: 25px;
+    font-family: 'Montserrat';
+}
+
+.user {
+    letter-spacing: 1px;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+mat-card {
+    font-family: 'Montserrat' !important;
+}
+
+.table-responsive {
+    overflow-y: hidden;
+}

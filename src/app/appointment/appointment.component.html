@@ -1,0 +1,22 @@
+<mat-progress-bar id="progressB" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+<div>
+  <form class="card" (ngSubmit)='submit(a)' #a='ngForm'>
+    <label>Appointment for<span> *</span></label>
+    <select class="form-control" ngModel name='appointment' required>
+      <option disabled selected value=""> -- Select Appointment -- </option>
+      <option *ngFor='let a of appointments' value="{{a.appointment}}">{{a.appointment}}</option>
+    </select><br>
+    <label>Book Date<span> *</span></label>
+    <p>{{selectedDate}}</p>
+    <dl-date-time-picker
+      startView="day"
+      maxView="year"
+      minView="minute"
+      minuteStep="30"
+      [(ngModel)]="selectedDate" name="selectedDate"
+      required
+      >
+    </dl-date-time-picker>
+    <button class="btn btn-primary" [disabled]='a.invalid '>Next</button>
+  </form>
+</div>

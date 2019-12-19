@@ -1,0 +1,14 @@
+<mat-progress-bar id="progressBar" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+<body>
+    <form class="card" (ngSubmit)='login(a)' #a='ngForm'>
+        <h4>Admin Login</h4><br>
+        <label>Username <span> *</span></label>
+        <input class="form-control" placeholder="Enter Username" ngModel name="user" required>
+        <br>
+        <label>Password <span> *</span></label>
+        <input type="password" class="form-control" placeholder="Enter Password" ngModel name="password" required>
+        <br>
+        <button class="btn btn-primary" [disabled]='a.invalid'>LOGIN</button>
+    </form>
+    <div class="card alert alert-info" style="text-align: center" *ngIf='message'>{{message}}</div>
+</body>>

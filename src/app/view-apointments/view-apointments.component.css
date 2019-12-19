@@ -1,0 +1,22 @@
+.card {
+    width: auto;
+    padding: 10px;
+}
+
+.filter {
+    width: 50%;
+    padding: 10px;
+    margin-left: 0;
+}
+
+.table-responsive {
+    overflow-y: hidden;
+}
+
+thead th {
+    font-size: 12px !important;
+}
+
+td {
+    font-size: 14px !important;
+}

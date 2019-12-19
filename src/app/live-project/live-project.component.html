@@ -1,0 +1,21 @@
+<body>
+  <mat-progress-bar id="progressB" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+  <div>
+    <form class="card" (ngSubmit)='submit(a)' #a="ngForm" onkeydown="return event.key != 'Enter';">
+      <label>Email <span> *</span></label>
+      <input type="email" placeholder="Email" [(ngModel)]="email" name="email" class="form-control" required [readonly]='input && input != true'><br>
+      <button type="button" class="btn btn-primary" (click)="onSubmit()" *ngIf="!input" [disabled]='!email'>Next</button><br *ngIf="!input">
+      <div *ngIf = 'input'>
+        <label>Surname <span> *</span></label><br>
+        <input type="text" placeholder="Surname" [(ngModel)]="surname" name="surname" class="form-control" required><br>
+        <label>First name <span> *</span></label><br>
+        <input type="text" placeholder="Name" [(ngModel)]="name" name="name" class="form-control" required><br>
+        <label>Other name <span> *</span></label><br>
+        <input type="text" placeholder="Othernames" [(ngModel)]="othernames" name="othernames" class="form-control" required><br>
+        <label>Phone <span> *</span></label><br>
+        <input type="tel" placeholder="Phone" [(ngModel)]="phone" name="phone" class="form-control" required><br>
+        <button class="btn btn-primary" [disabled]='a.invalid'>Next</button>
+      </div>    
+    </form>
+  </div>
+</body>

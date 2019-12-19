@@ -1,0 +1,78 @@
+<mat-progress-bar id="progressB" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+<body>
+    <div class="card" *ngIf="bio?.status == '0'">
+        <form (ngSubmit)="submit(a, 'bio')" #a='ngForm' *ngIf="showdiv == 1">
+            <h4>BIO INFO</h4>
+            <label>Full Name</label>
+            <input type="text" placeholder="Name" class="form-control" [(ngModel)]='bio.fullname' name="fullname" required><br>
+            <label>Email Address</label>
+            <input type="email" placeholder="Email Address" class="form-control" [(ngModel)]='bio.email' name="email" required><br>
+            <label>Phone Number (Whatsapp)</label>
+            <input type="tel" placeholder="Phone Number" class="form-control" [(ngModel)]='bio.phone' name="phone" required><br>
+            <button class="btn btn-light skip" type="button" (click)='skip()'>Skip Survey</button>
+            <button class="btn btn-primary smallbtn" [disabled]='a.invalid'>NEXT</button>
+        </form>
+
+        <form (ngSubmit)="submit(b, 'demo')" #b='ngForm' *ngIf="showdiv == 2">
+            <h4>DEMOGRAPHIC DETAILS</h4>
+            <label>Social Handle (Instagram)</label>
+            <input placeholder="Social Handle (Instagram)" class="form-control" ngModel name="instagram" required><br>
+            <label>Home Address</label>
+            <input placeholder="Home Address" class="form-control" ngModel name="address" required><br>
+            <label>Age Range</label>
+            <div class="checkbox">
+                <label><input class="radiobtn" type="radio" ngModel name="age_range" value="16-25" required> 16-25</label>
+                <label><input class="radiobtn" type="radio" ngModel name="age_range" value="26-35"> 26-35</label>
+                <label><input class="radiobtn" type="radio" ngModel name="age_range" value="36-45"> 36-45</label>
+                <label><input class="radiobtn" type="radio" ngModel name="age_range" value="46-55"> 46-55</label>
+                <label><input class="radiobtn" type="radio" ngModel name="age_range" value="56-above"> 56-above</label>
+            </div><br>
+            <button class="btn btn-light skip" type="button" (click)='skip()'>Skip Survey</button>
+            <button class="btn btn-primary smallbtn" [disabled]='b.invalid'>NEXT</button>
+        </form>
+
+        <form (ngSubmit)="submit(c, 'res')" #c='ngForm' *ngIf="showdiv == 3">
+            <h4>RESEARCH QUESTIONS</h4>
+            <label>1. Your favourite color</label>
+            <input placeholder="Your favourite color" class="form-control" ngModel name="fav_color" required><br>
+            <label>2. Your favourite designer</label>
+            <input type="text" placeholder="Your favourite designer" class="form-control" required ngModel name="fav_designer" required><br>
+            <label>3. Your favourite fashion icon</label>
+            <input type="text" placeholder="Your favourite designer" class="form-control" required ngModel name="fav_icon" required><br>
+            <label>4. Do you follow celebrity fashion trends?</label>
+            <div class="checkbox">
+                <label><input class="radiobtn" type="radio" ngModel name="fash_trend" value="YES" required> YES</label>
+                <label><input class="radiobtn" type="radio" ngModel name="fash_trend" value="NO"> NO</label>
+            </div><br>
+            <label>5. What is the fashion style you like the most?</label>
+            <input type="text" placeholder="What is the fashion style you like the most" class="form-control" required ngModel name="fav_style" required><br>
+            <label>6. What will you never be caught dead wearing?</label>
+            <input type="text" placeholder="What will you never be caught dead wearing?" class="form-control" required ngModel name="neverwear" required><br>
+            <label>7. What should always be in every woman's wardrobe?</label>
+            <input type="text" placeholder="What should always be in every woman's wardrobe?" class="form-control" required ngModel name="wardrobe_woman" required><br>
+            <label>8. Do you prefer fitted or free clothes?</label>
+            <div class="checkbox">
+                <label><input class="radiobtn" type="radio" ngModel name="fitted_or_free" value="fitted" required> fitted</label>
+                <label><input class="radiobtn" type="radio" ngModel name="fitted_or_free" value="free"> free</label>
+            </div><br>
+            <label>9. What is your best garment length?</label>
+            <div class="checkbox">
+                <label><input class="radiobtn" type="radio" ngModel name="garment_length" required value='Ankle length'> Ankle length</label>
+                <label><input class="radiobtn" type="radio" ngModel name="garment_length" value='Three-quarter'> Three-quarter</label>
+                <label><input class="radiobtn" type="radio" ngModel name="garment_length" value='Knee length'> Knee length</label>
+            </div><br>
+            <label>10. Will you be interested in being notified when the brand launches?</label>
+            <div class="checkbox">
+                <label><input class="radiobtn" type="radio" ngModel name="notify_me" value="yes" required> Yes</label>
+                <label><input class="radiobtn" type="radio" ngModel name="notify_me" value="dunno"> Dunno</label>
+                <label><input class="radiobtn" type="radio" ngModel name="notify_me" value="no"> No</label>
+            </div><br>
+            <button class="btn btn-light skip" type="button" (click)='skip()'>Skip Survey</button>
+            <button class="btn btn-primary smallbtn" [disabled]='c.invalid'>SUBMIT</button>
+        </form>
+    </div>
+
+    <div class="card" *ngIf="bio?.status == '1'">
+        <h3>SURVEY FORM HAS BEEN FILLED OUT. THANKS</h3>
+    </div>
+</body>

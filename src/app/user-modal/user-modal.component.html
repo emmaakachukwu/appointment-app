@@ -1,0 +1,25 @@
+<div class="table-responsive" mat-dialog-content>
+    <h4>{{data.name | titlecase}} Appointment History</h4>
+    <br>
+    <table class="table table-bordered">
+        <thead class="thead-light">
+            <tr>
+                <th>#</th>
+                <th>Appointment</th>
+                <th>Date</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor='let a of data.appHist; let i = index'>
+                <td>{{ i + 1 }}</td>
+                <td>{{a.appointment}}</td>
+                <td>{{data.appDate[i]}}</td>
+                <td>{{data.appTime[i]}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <button style="display: block; margin: auto" mat-button [mat-dialog-close] cdkFocusInitial>Close</button><br>
+</div>

@@ -1,0 +1,81 @@
+<mat-progress-bar id="progressBar" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+<body class="">
+    <!-- <mat-progress-bar id="progressBar" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar> -->
+    <div class="wrapper">
+        <div class="sidebar" data-color="white" data-active-color="danger">
+            <mat-progress-bar id="progressBar" mode="indeterminate" *ngIf='showProgress'></mat-progress-bar>
+        <!--
+            Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+        -->
+        <div class="logo">
+            <a href="" class="simple-text logo-normal">
+                App
+            </a>
+        </div>
+        <div class="sidebar-wrapper">
+            <ul class="nav">
+                <li routerLinkActive='active'>
+                    <a routerLink="/admin/users" >
+                    <i class="nc-icon nc-single-02"></i>
+                    <p>Users</p>
+                    </a>
+                </li>
+
+                <li routerLinkActive='active'>
+                    <a routerLink="/admin/view-appointments">
+                    <i class="nc-icon nc-tap-01"></i>
+                    <p>Appointments</p>
+                    </a>
+                </li>
+
+                <li routerLinkActive='active'>
+                    <a routerLink="/admin/view-surveys">
+                    <i class="nc-icon nc-paper"></i>
+                    <p>Survey</p>
+                    <hr>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        </div>
+        <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+            <div class="container-fluid">
+                <div class="navbar-wrapper">
+                    <div class="navbar-toggle">
+                    <button type="button" class="navbar-toggler">
+                        <span class="navbar-toggler-bar bar1"></span>
+                        <span class="navbar-toggler-bar bar2"></span>
+                        <span class="navbar-toggler-bar bar3"></span>
+                    </button>
+                    </div>
+                    <a class="navbar-brand" href="#pablo">{{head}}</a>
+                </div>
+                <span class="spacer"></span>
+                <button id="accountcircle" mat-button [matMenuTriggerFor]='menu' title="user"><span class="user" style="font-size: 12px"></span><mat-icon id='user'>account_circle</mat-icon>
+                </button>
+                <mat-menu #menu='matMenu' class="menu">
+                    <button mat-menu-item (click)='onLogout()'><i class="nc-icon nc-button-power"></i>Logout</button>
+                </mat-menu>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content">
+            <router-outlet></router-outlet>
+        </div>
+        
+        <footer class="footer footer-black  footer-white ">
+            <div class="container-fluid">
+            <div class="row">
+                <div class="credits ml-auto">
+                <span class="copyright">
+                    © {{year}}, App
+                </span>
+                </div>
+            </div>
+            </div>
+        </footer>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,44 @@
+<div>
+    <div class="card filter">
+        <mat-form-field>
+            <mat-label>Filter Appointments</mat-label>
+            <mat-select [(ngModel)]='selected' name='filter' (ngModelChange)="filter($event)">
+                <mat-option value='0'>All</mat-option>
+                <mat-option value='1'>Today</mat-option>
+                <mat-option value='2'>Tommorrow</mat-option>
+                <mat-option value='3'>In a week</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="table-responsive card" *ngIf='appointments'>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Appointment</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor='let a of appointments; let i = index'>
+                    <td>{{ i + 1 }}</td>
+                    <td>{{a?.email}}</td>
+                    <td>{{a?.phone_no}}</td>
+                    <td>{{a?.appointment}}</td>
+                    <td>{{appDate[i]}}</td>
+                    <td>{{appTime[i]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card" style="text-align: center" *ngIf='!appointments'>
+        <h4>No appointments found</h4>
+    </div>
+
+</div>
+

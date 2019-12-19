@@ -1,0 +1,21 @@
+<body>
+    <div class="card" *ngIf='paid == 0'>
+        <h4>To complete your appointment, you will have to make payment</h4>
+        <br>
+        <br>
+        <angular4-paystack
+        [key]="'pk_test_de6a2849091bfa1426a1ec0ec0ffd56e36602ba4'"
+        [email]="'mailexample@mail.com'"
+        [amount]="amount * 100"
+        [ref]="payId"
+        [class]="'btn btn-primary'"
+        (callback)="paymentDone($event)"
+        >Pay {{amount}}</angular4-paystack>
+    </div>
+
+    <div class="card" *ngIf='paid == 1'>
+        <h4>You have successfully booked an appointment for {{info?.appointment}} on {{infodate}}</h4>
+    </div>
+
+    <mat-progress-spinner mode='indeterminate' style="display: block; margin: 50px auto" *ngIf='showProgress'></mat-progress-spinner>
+</body>

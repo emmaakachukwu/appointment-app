@@ -1,0 +1,9 @@
+@media ( max-width: 768px ) {
+    h4, th, td {
+        font-size: 14px;
+    }
+
+    h4 {
+        text-align: center;
+    }
+}
