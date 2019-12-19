@@ -17,12 +17,8 @@ export class DataService {
 
   //for sending payloads to the backend
   postMethod ( payLoad ) {
-    return this.http.post ("http://localhost/appointment/appointmentapi.php", JSON.stringify(payLoad));
+    return this.http.post ("http://localhost/appointment/api/appointmentapi.php", JSON.stringify(payLoad));
   }
-
-  // postMethod ( payLoad ) {
-  //   return this.http.post ("http://learnpower.com.ng/app2/appointment/appointmentapi.php", JSON.stringify(payLoad));
-  // }
 
   //displaying progress bar
   private loaderStatus = new BehaviorSubject<boolean>(false);
