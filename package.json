@@ -24,7 +24,7 @@
     "angular-bootstrap-datetimepicker": "^3.0.0",
     "angular4-paystack": "^2.3.3",
     "bootstrap": "^4.0.0-beta.2",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.11.3",
     "datatables.net-bs4": "^1.10.20",
     "datatables.net-buttons": "^1.6.0",
     "datatables.net-buttons-bs4": "^1.6.0",
